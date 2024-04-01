@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Catalogos" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_ICatalogos_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://wsdev.procomer.go.cr:7778/PROCOMER_INS_Catalogos/Catalogos.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://wsdev.procomer.go.cr:7778/PROCOMER_INS_Catalogos/Catalogos.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://wsdev.procomer.go.cr:7778/PROCOMER_INS_Catalogos/Catalogos.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCF_PROCOMER_INS_Catalogos.Models" />
+      <xsd:import schemaLocation="https://wsdev.procomer.go.cr:7778/PROCOMER_INS_Catalogos/Catalogos.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WCF_PROCOMER_INS_Catalogos" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICatalogos_TipoIdentificaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoIdentificaciones" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_TipoIdentificaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoIdentificacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_TipoPolizas_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoPolizas" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_TipoPolizas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoPolizasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_FormaPagos_InputMessage">
+    <wsdl:part name="parameters" element="tns:FormaPagos" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_FormaPagos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FormaPagosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_EstadoPolizas_InputMessage">
+    <wsdl:part name="parameters" element="tns:EstadoPolizas" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_EstadoPolizas_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EstadoPolizasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_Ocupaciones_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ocupaciones" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_Ocupaciones_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OcupacionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_TipoIdentificacionesJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoIdentificacionesJson" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_TipoIdentificacionesJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoIdentificacionesJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_TipoPolizasJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:TipoPolizasJson" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_TipoPolizasJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TipoPolizasJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_FormaPagosJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FormaPagosJson" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_FormaPagosJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FormaPagosJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_EstadoPolizasJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:EstadoPolizasJson" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_EstadoPolizasJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EstadoPolizasJsonResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_OcupacionesJson_InputMessage">
+    <wsdl:part name="parameters" element="tns:OcupacionesJson" />
+  </wsdl:message>
+  <wsdl:message name="ICatalogos_OcupacionesJson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OcupacionesJsonResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICatalogos">
+    <wsdl:operation name="TipoIdentificaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogos/TipoIdentificaciones" message="tns:ICatalogos_TipoIdentificaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogos/TipoIdentificacionesResponse" message="tns:ICatalogos_TipoIdentificaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoPolizas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogos/TipoPolizas" message="tns:ICatalogos_TipoPolizas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogos/TipoPolizasResponse" message="tns:ICatalogos_TipoPolizas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FormaPagos">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogos/FormaPagos" message="tns:ICatalogos_FormaPagos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogos/FormaPagosResponse" message="tns:ICatalogos_FormaPagos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EstadoPolizas">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogos/EstadoPolizas" message="tns:ICatalogos_EstadoPolizas_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogos/EstadoPolizasResponse" message="tns:ICatalogos_EstadoPolizas_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ocupaciones">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogos/Ocupaciones" message="tns:ICatalogos_Ocupaciones_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogos/OcupacionesResponse" message="tns:ICatalogos_Ocupaciones_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoIdentificacionesJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogos/TipoIdentificacionesJson" message="tns:ICatalogos_TipoIdentificacionesJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogos/TipoIdentificacionesJsonResponse" message="tns:ICatalogos_TipoIdentificacionesJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TipoPolizasJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogos/TipoPolizasJson" message="tns:ICatalogos_TipoPolizasJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogos/TipoPolizasJsonResponse" message="tns:ICatalogos_TipoPolizasJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FormaPagosJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogos/FormaPagosJson" message="tns:ICatalogos_FormaPagosJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogos/FormaPagosJsonResponse" message="tns:ICatalogos_FormaPagosJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EstadoPolizasJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogos/EstadoPolizasJson" message="tns:ICatalogos_EstadoPolizasJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogos/EstadoPolizasJsonResponse" message="tns:ICatalogos_EstadoPolizasJson_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OcupacionesJson">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICatalogos/OcupacionesJson" message="tns:ICatalogos_OcupacionesJson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICatalogos/OcupacionesJsonResponse" message="tns:ICatalogos_OcupacionesJson_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICatalogos" type="tns:ICatalogos">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TipoIdentificaciones">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/TipoIdentificaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoPolizas">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/TipoPolizas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FormaPagos">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/FormaPagos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstadoPolizas">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/EstadoPolizas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ocupaciones">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/Ocupaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoIdentificacionesJson">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/TipoIdentificacionesJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoPolizasJson">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/TipoPolizasJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FormaPagosJson">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/FormaPagosJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstadoPolizasJson">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/EstadoPolizasJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OcupacionesJson">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/OcupacionesJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_ICatalogos" type="tns:ICatalogos">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_ICatalogos_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TipoIdentificaciones">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/TipoIdentificaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoPolizas">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/TipoPolizas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FormaPagos">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/FormaPagos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstadoPolizas">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/EstadoPolizas" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ocupaciones">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/Ocupaciones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoIdentificacionesJson">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/TipoIdentificacionesJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TipoPolizasJson">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/TipoPolizasJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FormaPagosJson">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/FormaPagosJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EstadoPolizasJson">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/EstadoPolizasJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OcupacionesJson">
+      <soap:operation soapAction="http://tempuri.org/ICatalogos/OcupacionesJson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Catalogos">
+    <wsdl:port name="BasicHttpBinding_ICatalogos" binding="tns:BasicHttpBinding_ICatalogos">
+      <soap:address location="http://az-srv-pagos.sivuce.procomer.com:7775/PROCOMER_INS_Catalogos/Catalogos.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_ICatalogos" binding="tns:BasicHttpsBinding_ICatalogos">
+      <soap:address location="https://wsdev.procomer.go.cr:7778/PROCOMER_INS_Catalogos/Catalogos.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

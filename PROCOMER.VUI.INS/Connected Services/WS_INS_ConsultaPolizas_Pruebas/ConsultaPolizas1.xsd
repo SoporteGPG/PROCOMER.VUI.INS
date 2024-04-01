@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://wsdev.procomer.go.cr:7778/PROCOMER_INS_ConsultaPoliza/ConsultaPolizas.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCF_PROCOMER_ConsultaPolizas" />
+  <xs:element name="ConsultaPoliza">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCF_PROCOMER_ConsultaPolizas" minOccurs="0" name="param" nillable="true" type="q1:Param" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaPolizaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCF_PROCOMER_ConsultaPolizas" minOccurs="0" name="ConsultaPolizaResult" nillable="true" type="q2:Respuesta" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaPolizajson">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="jsonData" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaPolizajsonResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultaPolizajsonResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

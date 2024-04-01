@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WCF_PROCOMER_ConsultaPolizas" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WCF_PROCOMER_ConsultaPolizas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Param">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodigoTipoIdentificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaDesde" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Identificacion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroPoliza" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoProceso" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Param" nillable="true" type="tns:Param" />
+  <xs:complexType name="Respuesta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Codigo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Respuesta" nillable="true" type="tns:Respuesta" />
+</xs:schema>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ConsultaPolizas" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpsBinding_IConsultaPolizas_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://wsdev.procomer.go.cr:7778/PROCOMER_INS_ConsultaPoliza/ConsultaPolizas.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://wsdev.procomer.go.cr:7778/PROCOMER_INS_ConsultaPoliza/ConsultaPolizas.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://wsdev.procomer.go.cr:7778/PROCOMER_INS_ConsultaPoliza/ConsultaPolizas.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WCF_PROCOMER_ConsultaPolizas" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IConsultaPolizas_ConsultaPoliza_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaPoliza" />
+  </wsdl:message>
+  <wsdl:message name="IConsultaPolizas_ConsultaPoliza_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaPolizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IConsultaPolizas_ConsultaPolizajson_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaPolizajson" />
+  </wsdl:message>
+  <wsdl:message name="IConsultaPolizas_ConsultaPolizajson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaPolizajsonResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IConsultaPolizas">
+    <wsdl:operation name="ConsultaPoliza">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsultaPolizas/ConsultaPoliza" message="tns:IConsultaPolizas_ConsultaPoliza_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsultaPolizas/ConsultaPolizaResponse" message="tns:IConsultaPolizas_ConsultaPoliza_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPolizajson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsultaPolizas/ConsultaPolizajson" message="tns:IConsultaPolizas_ConsultaPolizajson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsultaPolizas/ConsultaPolizajsonResponse" message="tns:IConsultaPolizas_ConsultaPolizajson_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IConsultaPolizas" type="tns:IConsultaPolizas">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultaPoliza">
+      <soap:operation soapAction="http://tempuri.org/IConsultaPolizas/ConsultaPoliza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPolizajson">
+      <soap:operation soapAction="http://tempuri.org/IConsultaPolizas/ConsultaPolizajson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpsBinding_IConsultaPolizas" type="tns:IConsultaPolizas">
+    <wsp:PolicyReference URI="#BasicHttpsBinding_IConsultaPolizas_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConsultaPoliza">
+      <soap:operation soapAction="http://tempuri.org/IConsultaPolizas/ConsultaPoliza" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaPolizajson">
+      <soap:operation soapAction="http://tempuri.org/IConsultaPolizas/ConsultaPolizajson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaPolizas">
+    <wsdl:port name="BasicHttpBinding_IConsultaPolizas" binding="tns:BasicHttpBinding_IConsultaPolizas">
+      <soap:address location="http://az-srv-pagos.sivuce.procomer.com:7775/PROCOMER_INS_ConsultaPoliza/ConsultaPolizas.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpsBinding_IConsultaPolizas" binding="tns:BasicHttpsBinding_IConsultaPolizas">
+      <soap:address location="https://wsdev.procomer.go.cr:7778/PROCOMER_INS_ConsultaPoliza/ConsultaPolizas.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
